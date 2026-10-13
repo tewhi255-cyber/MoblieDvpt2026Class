@@ -1,0 +1,111 @@
+============================================================
+ SMART STUDENT TRACKER - WRITTEN ANSWERS AND TABLES
+============================================================
+
+------------------------------------------------------------
+STAGE 2 - Question: Write 2 reasons why Dart is a good
+language for mobile apps.
+------------------------------------------------------------
+1. AOT and JIT compilation. Dart compiles to fast native code
+   (AOT) for release builds, so apps run quickly. During
+   development it uses JIT, which powers Flutter's hot reload
+   (see your change almost instantly without restarting).
+2. Single codebase with Flutter. Dart is the language behind
+   Flutter, so one codebase runs on both Android and iOS and
+   produces a consistent, native-like UI and performance.
+
+------------------------------------------------------------
+STAGE 3 - Table: variable | keyword | type | why
+------------------------------------------------------------
+schoolName  | const  | String        | It is a fixed value known
+            |        |               | before the program runs and
+            |        |               | never changes.
+studentName | final  | String        | It is set once while the
+            |        |               | program runs and must not
+            |        |               | change after that.
+age         | var    | int           | Dart infers the type from
+            |        |               | the value; it can change.
+height      | double | double        | It stores a decimal number.
+isBoarding  | bool   | bool          | It stores true or false.
+nickname    | String?| String (null) | Nullable; it has no value
+            |        |               | yet, so it is null.
+
+--- Task 3.2 explanations ---
+* age.runtimeType prints "int" and height.runtimeType prints
+  "double".
+
+* age = 'twenty';  ->  ERROR: A value of type 'String' can't be
+  assigned to a variable of type 'int'. Dart is statically typed:
+  once a variable's type is decided, it only accepts that type.
+
+* Changing studentName  ->  ERROR: 'studentName' can't be
+  assigned a value because it is declared with 'final'.
+
+* Changing schoolName  ->  ERROR: 'schoolName' can't be assigned
+  a value because it is declared with 'const'.
+
+* print(nickname) prints "null". nickname is a String? (nullable)
+  and was never given a value, so its default value is null.
+
+--- Task 3.4: difference between / and ~/ ---
+* /  is normal division and always returns a double
+     (e.g. 247 / 3 = 82.33333333333333).
+* ~/ is integer division and returns an int, throwing away any
+     remainder (e.g. 247 ~/ 3 = 82).
+
+------------------------------------------------------------
+STAGE 4 - Table: 5 different sets of marks
+------------------------------------------------------------
+ Math | English | Science | Average | Grade | Result
+------+---------+---------+---------+-------+--------
+  85  |   72    |   90    |  82.3   |   A   | PASS
+  75  |   70    |   74    |  73.0   |   B   | PASS
+  60  |   65    |   62    |  62.3   |   C   | PASS
+  55  |   50    |   52    |  52.3   |   D   | PASS
+  30  |   40    |   45    |  38.3   |   F   | FAIL
+
+--- Task 4.4 switch: changing choice ---
+switch(choice = 2) -> "View marks"
+switch(choice = 1) -> "View profile"
+switch(choice = 3) -> "View grade"
+switch(choice = 9) -> "Invalid option" (falls to default)
+
+--- Question: When is switch better than else if? ---
+switch is better when you compare ONE value against a list of
+exact, fixed options (like a menu number or a name). It is
+cleaner and easier to read than a long chain of else if, and the
+compiler can check the cases. Use else if when you need ranges
+or complex conditions (for example "average >= 80").
+
+------------------------------------------------------------
+STAGE 5 - Table: loop | when to use it
+------------------------------------------------------------
+Loop     | When to use it
+---------+-------------------------------------------------
+for      | When you know how many times to repeat, or you
+         | need an index/counter (e.g. a multiplication table).
+for-in   | When you just want to visit every item in a list
+         | or collection (no index needed).
+while    | When you repeat based on a condition that may be
+         | checked before the first run (may run zero times).
+do-while | When the body must run at least once before the
+         | condition is checked.
+
+--- Task 5.4: Why does a do-while always run at least once? ---
+Because a do-while checks its condition AFTER it runs the body.
+The first pass happens before the check, so even if the
+condition is false from the start, the body still runs once.
+
+------------------------------------------------------------
+STAGE 6 - 5 lines: what was hardest
+------------------------------------------------------------
+1. Understanding the difference between var, final and const and
+   when each one is allowed to change.
+2. Remembering that / returns a double while ~/ returns an int.
+3. Getting the grade ranges right so the boundaries (50, 60, 70,
+   80) do not overlap.
+4. Learning when to use break (stop the whole loop) versus
+   continue (skip only the current item).
+5. Keeping the report-card output lined up neatly with
+   interpolation, spacing and the correct totals.
+============================================================
